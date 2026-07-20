@@ -1,69 +1,67 @@
-# Vision
+﻿# Vision
 
-## The Problem RedForce AI Is Built to Solve
-
-Enterprise security testing was designed for a world that no longer exists.
-
-Conventional security tools were built around a static model of software. A program had inputs, outputs, and deterministic logic. Security testing meant analysing code for known patterns, scanning networks for known weaknesses, and probing applications for known vulnerability classes. Each tool produced findings in its own silo. A human integrated them into something that resembled understanding.
-
-This model worked when applications were monolithic, when AI was confined to research labs, and when the attack surface was bounded by what an architecture diagram could show. None of those conditions hold any longer.
-
-Modern enterprise systems combine AI components with conventional software in ways that produce emergent attack surfaces. Large language models interpret rather than execute. Retrieval-augmented systems synthesise context from distributed sources that may be adversarially controlled. Autonomous agents plan and act across tool boundaries in ways that vary with every invocation. Conventional security tools cannot reason about these systems because they were not designed to.
-
-At the same time, the organisations that deploy these systems face a different gap. Even when good security tools exist, organisations struggle to operate them effectively. Findings sit in dashboards no one reviews. Compliance frameworks remain disconnected from technical evidence. Security maturity is measured anecdotally, if at all. The result is a paradox where security spend increases while security outcomes stagnate.
-
-RedForce AI is built to address both problems together. It validates the security of modern systems including their AI components, and it provides the organisational visibility required to translate validation into sustained capability improvement.
+## RedForce AI — Autonomous Security Intelligence for the Age of AI
 
 ---
 
-## What RedForce AI Does Differently
+## Why RedForce AI Exists
 
-The platform is built around a thesis that has not been validated by conventional security tools: that effective security testing of modern systems requires converged analysis across documentation, code, and runtime behaviour, supported by AI reasoning that plans attack chains the way a skilled human pentester would.
+The discipline of application security was built for a different era. The tools, workflows, and mental models that have defined the field for two decades were designed to protect software written by humans, deployed in predictable environments, and exploited through well-catalogued techniques. That era is ending.
 
-**Skilled pentesters work by understanding context first.** They read the design documentation to understand business logic. They review the code to identify weaknesses. They probe the running application to confirm exploitability. Then they chain findings across these contexts into an attack narrative that demonstrates real risk, not isolated technical issues.
+Artificial intelligence is now embedded at every layer of the modern software stack — in APIs, in decision systems, in the models that process sensitive data at scale. This shift has not been accompanied by a corresponding evolution in how organisations test, validate, and defend those systems. Security teams are applying legacy tooling to fundamentally new threat surfaces, accepting coverage gaps as an operational reality, and operating without the continuous assurance that the risk posture of their AI-integrated systems is actually understood.
 
-Conventional scanners do none of this. They take one input, apply one set of rules, and produce findings. The integration happens in someone's head, or it does not happen at all.
-
-RedForce AI automates the human approach. Documentation, code, and runtime application data converge into a single AI reasoning layer that plans attacks across all three. The platform identifies which CVEs are actually exploitable given the specific application code. It recognises that an SQL injection in one place enables admin access elsewhere. It connects findings into attack narratives showing realistic exploitation paths.
-
-Beyond technical findings, the platform reports on the organisational dimensions that determine whether technical security translates into operational security: governance maturity, capability development, continuous learning, and adaptation indicators that compound across repeated assessments.
+RedForce AI exists to close that gap — to build the security intelligence platform that the AI era demands.
 
 ---
 
-## Why Now
+## What Gap in AI Security It Solves
 
-Three forces make this approach not merely possible but necessary in 2026 and beyond.
+Contemporary AI security practice is characterised by a structural blind spot: the treatment of AI security as a model-level problem. Most current tooling and most current assessment practice focuses on the model interface — prompt injection, jailbreaking, output safety. These are real risks. They are not the complete risk picture.
 
-**AI systems are entering production at scale.** Every mid-scale and enterprise organisation now operates LLM integrations, retrieval-augmented systems, or autonomous agents. The security risk surface has expanded in ways that conventional vulnerability scanners cannot address.
+A production AI system has attack surface at every layer of the stack it runs on. The model and its interfaces present one layer of risk. The web application or API through which the model is accessed presents another. The infrastructure the system runs on presents another. The data pipeline that feeds the retrieval system presents another. The network through which it communicates presents another. Each of these layers is independently exploitable. Each can be used to compromise the integrity of the AI system or the data it processes — regardless of how well the model layer itself has been secured.
 
-**Regulatory frameworks are codifying AI security requirements.** The EU AI Act, NIST AI RMF, and ISO/IEC 42001 establish explicit obligations for AI security validation, governance, and continuous monitoring. Organisations that cannot produce auditable evidence of AI security validation face escalating compliance risk.
+A chatbot embedded in a web application inherits the full web attack surface of that application: authentication bypass, injection vulnerabilities, session management failures, API exposure. Securing the model while leaving the application layer unvalidated is not AI security — it is partial security with a false assurance effect. An AI-driven agent running on a server inherits the hardening posture of that server. A cloud-hosted AI system inherits the configuration risk of its cloud environment. The attack surface of a production AI system is the sum of all its layers, not the model layer alone.
 
-**The economics of security testing have shifted.** Large enterprises can afford specialist tools for every domain. Mid-scale organisations cannot. They need consolidated capability that addresses application security, API security, AI security, code analysis, threat modelling, and compliance reporting in one platform, at a price point that fits their budget.
+Beyond the foundational layers, AI-native architectures introduce attack surfaces with no direct precedent in conventional security practice: RAG pipeline integrity, where adversarial content introduced into the retrieval corpus can manipulate model outputs without touching the model interface; autonomous agent security, where multi-step reasoning chains can be hijacked to produce unauthorised actions across tool boundaries; and Model Context Protocol security, where the trust relationships between AI clients and connected enterprise systems create a new class of privilege escalation and injection risk.
 
-RedForce AI is built for the mid-scale organisations that current enterprise tools systematically underserve, and for the regulatory environment that emerges over the next twenty-four months.
+Contemporary application security testing is further characterised by three structural deficiencies that compound in AI-integrated environments. Coverage asymmetry: automated scanners provide high-confidence detection across a narrow band of known vulnerability classes, while AI-specific risks fall almost entirely outside their scope. Reactive posture: security testing remains predominantly event-driven, tied to release cycles rather than the continuous change velocity of AI systems. Fragmented intelligence: the knowledge required to test modern AI systems is distributed across emerging standards, independent research, and tooling that does not interoperate.
 
----
-
-## What Success Looks Like
-
-RedForce AI succeeds when organisations stop treating security validation as a periodic compliance exercise and start treating it as a continuous operational discipline.
-
-Success means a mid-scale financial services firm running automated converged assessments against its production systems weekly, receiving compliance-mapped findings the engineering team can action, and demonstrating sustained improvement in organisational security maturity over time.
-
-Success means a healthcare insurance platform demonstrating to regulators that its AI-driven fraud detection system is continuously validated against current threat models, with audit-ready evidence linking technical findings to governance accountability.
-
-Success means a cloud-native SaaS company integrating RedForce into its CI/CD pipeline, blocking releases that introduce critical findings, and building a development culture where security validation is part of how software ships rather than something done before it does.
-
-Success means an enterprise security team using RedForce to translate technical findings into board-level risk language that drives strategic investment decisions, replacing the dashboards full of unactioned findings that currently characterise enterprise security operations.
-
-These are concrete, measurable outcomes. They define what RedForce AI is built to enable.
+RedForce AI is a direct response to these deficiencies. It is designed to provide continuous, autonomous security validation across the full stack of an AI system — from the application and infrastructure layers that form its foundation to the model interfaces, retrieval pipelines, agent architectures, and protocol layers that define its AI-specific attack surface.
 
 ---
 
-## Long-Term Direction
+## Principles That Guide Development
 
-As AI systems become more capable, more autonomous, and more deeply embedded in enterprise operations, the security validation challenge will grow in proportion. The organisations that respond well will be those that treat AI security as a continuous operational discipline, not a compliance exercise and not an afterthought.
+RedForce AI is developed according to principles that are non-negotiable regardless of commercial or operational pressure.
 
-RedForce AI is being built to support that discipline. The long-term direction is a platform that gives organisations the capability to deploy systems they can trust — not because those systems have been assessed once and declared secure, but because their security posture is continuously validated, continuously evidenced, and continuously improved.
+**Privacy by architecture.** Organisations that deploy security tooling must not create new exposure in doing so. RedForce AI is designed with a hard constraint against data egress. All analysis, inference, and intelligence generation operates within the boundary of the deploying organisation's environment. No telemetry. No external model dependencies. No data leaves.
 
-The future of enterprise security is not more dashboards or more findings. It is fewer findings that matter more, better evidence behind every finding, and a clearer line from technical signal to organisational outcome. That is what RedForce AI is built to deliver.
+**Standards fidelity.** Security findings have no value if they cannot be traced to an authoritative, reproducible basis. RedForce AI maintains strict alignment with current active versions of recognised security standards — OWASP Top 10:2025, API Security Top 10:2023, LLM Top 10 v1.1, Mobile Top 10:2024, MITRE ATLAS, and NIST AI RMF — and treats standards versioning as a first-class operational concern. Deprecated mappings are not acceptable proxies.
+
+**Continuous over periodic.** Security posture is not a snapshot. The platform is designed for persistent operation — continuously validating, continuously learning, continuously surfacing risk — rather than supporting the scheduled assessment model that has historically defined the field.
+
+**Governance accountability.** Risk decisions are not delegated to automation. The humans in the loop are the client organisation's own security leadership — the CISO, Security Lead, or SOC Head — who authorise assessment scope, acknowledge findings, and approve remediation actions. This governance model keeps the chain of accountability where it belongs: with named, responsible individuals within the deploying organisation. It is the mechanism by which a security programme remains defensible under SOC 2, ISO 27001, and PCI-DSS audit — and the mechanism by which board-level reporting on AI security posture can be signed by someone accountable for its accuracy.
+
+**Transparency of findings.** Autonomous systems that produce security findings without explainable evidence create operational risk, not reduction. Every finding surfaced by RedForce AI is accompanied by reproducible evidence and a traceable rationale. Black-box verdicts are not findings; they are noise.
+
+**Adaptive intelligence.** Static detection is a ceiling, not a foundation. The platform is designed to improve its understanding of risk over time — incorporating new threat intelligence, refining detection logic, and adapting to the specific security context of the environments it monitors.
+
+---
+
+## Long-Term Impact
+
+RedForce AI is oriented toward a future in which the security of AI systems is not a specialised concern addressed by a small community of researchers, but a baseline organisational capability available to any enterprise deploying software at scale.
+
+The long-term ambition is threefold.
+
+First, to establish a new operational standard: that AI-integrated systems are subject to continuous, evidence-based security validation across their full stack — not partial validation of the model layer alone, and not as an exceptional practice reserved for high-compliance environments.
+
+Second, to contribute to the maturation of AI security as a discipline — through consistent application of emerging standards, contribution to the evidence base for what constitutes effective AI security testing, and support for the organisations working to define that field. The platform's design is informed by ongoing doctoral research into the organisational, governance, and human factors that determine whether AI security programmes achieve meaningful outcomes at scale. That research informs not only the platform's technical architecture but its governance model — grounded in the finding that technical controls alone do not constitute a security programme without the human accountability structures that make those controls defensible and sustainable.
+
+Third, to demonstrate that autonomous security intelligence, organisational privacy, and human governance accountability are not competing values. The assumption that sophisticated AI-powered security requires either surrendering data sovereignty or displacing human accountability has been accepted without sufficient challenge. RedForce AI is built on the premise that this assumption is wrong — that a platform can be both technically capable and structurally accountable.
+
+The measure of success is not market position. It is whether the organisations that deploy RedForce AI are materially harder to compromise — and whether the humans responsible for their security posture can demonstrate that with evidence.
+
+---
+
+*RedForce AI is developed with the conviction that the security industry must evolve as fast as the threats it exists to address. This document reflects that commitment.*
