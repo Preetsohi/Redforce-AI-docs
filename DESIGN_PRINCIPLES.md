@@ -1,4 +1,4 @@
-# Design Principles
+﻿# Design Principles
 
 ## The Engineering Philosophy of RedForce AI
 
@@ -16,7 +16,7 @@ These principles are not aspirations. They are constraints — binding commitmen
 
 **Why it matters:** A security validation platform that introduces its own exploitable attack surface is not a solution — it is an additional liability. The credibility of every finding RedForce AI produces depends on the integrity of the platform producing it. Organisations must be able to deploy it without accepting new risk in exchange for reduced risk elsewhere.
 
-**How it influences product decisions:** Security requirements are treated as first-class design constraints from the earliest stage of any capability development. Threat modelling precedes implementation. Findings that the platform cannot defend against itself are not shipped as detection capabilities. The platform is held to the same standards it applies to the systems it assesses.
+**How it influences product decisions:** Security requirements are treated as first-class design constraints from the earliest stage of any capability development. Threat modelling precedes implementation. The platform's security scope spans the full stack of an AI system — application layer, API surface, data pipeline, and infrastructure — because a vulnerability at any layer can compromise the AI system's integrity regardless of model-layer hardening. Findings that the platform cannot defend against itself are not shipped as detection capabilities. The platform is held to the same standards it applies to the systems it assesses.
 
 ---
 
@@ -40,13 +40,13 @@ These principles are not aspirations. They are constraints — binding commitmen
 
 ---
 
-## 4. Human-in-the-Loop
+## 4. Human-in-the-Loop Governance
 
-**Principle:** Autonomous capability accelerates human judgement; it does not replace it.
+**Principle:** Security governance accountability remains with the client organisation's named security leadership at every stage of the validation workflow.
 
-**Why it matters:** Security decisions carry consequences. False positives waste finite remediation capacity. False negatives leave genuine risk unaddressed. An autonomous platform that produces findings without meaningful human oversight creates the conditions for both failure modes at scale. Security professionals must remain the decision-makers; the platform's role is to give them better information, faster.
+**Why it matters:** The humans in the loop are not external reviewers or platform operators — they are the client organisation's own CISO, Security Lead, or SOC Head. Regulatory and compliance frameworks including SOC 2, ISO 27001, and PCI-DSS require that risk decisions are made and signed off by named, accountable individuals within the organisation, not delegated to automated systems. Organisations that cannot demonstrate a human accountability chain for their security posture face audit and compliance exposure. Beyond compliance, governance accountability that sits outside the client organisation is governance accountability that the client organisation cannot evidence, cannot defend under audit, and cannot present to a board risk committee as its own.
 
-**How it influences product decisions:** The platform is designed to surface findings to human reviewers with sufficient context for informed judgement — not to act autonomously on those findings. Escalation paths, false positive marking, and analyst review workflows are treated as core features, not secondary interfaces. Automation raises the floor of coverage; human expertise raises the ceiling of quality.
+**How it influences product decisions:** The platform is designed so that three categories of action require explicit authorisation by a named role within the client organisation: scan scope authorisation — a named security governance role approves what the platform is permitted to assess before assessment begins; finding acknowledgement — findings are formally acknowledged by the named governance role, creating a documented record of organisational awareness; and remediation approval — remediation actions are approved by the named governance role before they are enacted. The platform replaces the labour of manual pentesting and security auditing. It does not replace the governance chain that makes security decisions defensible, auditable, and accountable. Automating risk decisions is not the goal; making risk decisions faster, better-evidenced, and more consistently documented is.
 
 ---
 
@@ -86,7 +86,7 @@ These principles are not aspirations. They are constraints — binding commitmen
 
 **Why it matters:** Security findings derive their authority from the standards they reference. Outdated mappings produce misleading coverage metrics and undermine the evidentiary value of findings in governance and regulatory contexts. As standards evolve, the platform must evolve with them — not as a maintenance task, but as a core operational commitment.
 
-**How it influences product decisions:** Standards versioning is treated as a first-class concern. Mappings to OWASP, MITRE, NIST, and applicable regulatory frameworks are maintained against current active versions and updated as those standards are revised. Deprecated versions are not used as proxies for current requirements. The standards baseline is authoritative, not approximate.
+**How it influences product decisions:** Standards versioning is treated as a first-class concern. Mappings to OWASP Top 10:2025, API Security Top 10:2023, LLM Top 10 v1.1, Mobile Top 10:2024, MITRE ATLAS, and NIST AI RMF are maintained against current active versions and updated as those standards are revised. Deprecated versions are not used as proxies for current requirements. The standards baseline is authoritative, not approximate.
 
 ---
 
